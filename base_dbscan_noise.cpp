@@ -35,14 +35,9 @@ void noise_detection(float** points, float epsilon, int min_samples, long long i
         if (cont==min_samples){
             points[i][2]=0;       
         }
-    
     }
 
     cout << "Complete" << "\n"; 
-}
-
-int define_category(float** points, float epsilon, int min_samples, long long int size){
-
 }
 
 void load_CSV(string file_name, float** points, long long int size) {
