@@ -6,17 +6,36 @@
 
 using namespace std;
 
+long long x1=0;
+long long y1=0;
+long long x2=0;
+long long y2=0;
+int cont = 0;
+
 void noise_detection(float** points, float epsilon, int min_samples, long long int size) {
     cout << "Step 0" << "\n"; 
     for (long long int i=0; i < size; i++) {
         points[i][2] = rand() % 2;
     }   
-
+    //aqui entra a acomparar distancias
     for (long long int j=0; j < size; j++){
-        j = point[i][2];
-        for (long long int i=0; i < size; i++){
-            define_category
+        x1 = points[j][0];
+        y1 = points[j][1];
+        cont=0;
+
+        while(cont<min_samples){
+            if (x1!=x2 && y1!=y2){
+                    //función euclideana
+                    d=sqrt(pow(x2-x1,2)+pow(y2-y1,2));
+                    if (d<=epsilon)
+                        cont++;
+                    
+            }
         }
+        if (cont==min_samples){
+            points[i][2]=0;       
+        }
+    
     }
 
     cout << "Complete" << "\n"; 
